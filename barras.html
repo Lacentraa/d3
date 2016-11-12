@@ -41,7 +41,7 @@ svg.selectAll('text').data(datos).enter().append('text')
    .attr("font-size", 40)
    .attr("x", 10)
    .attr("y", function(d,i) {return 50+(i*100)} )
-   .text(function(d,i) {return d.candidato});
+   .text( function(d,i) {return d.candidato} );
 
 </script>  
   
