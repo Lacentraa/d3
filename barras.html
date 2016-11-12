@@ -39,7 +39,7 @@ var losR = svg.selectAll('rect').data(datos).enter().append('rect')
 
 losR.transition()
 //    .duration(1000)
-    .attr("color",  function(d,i) {return d.color} )
+    .attr("fill",  function(d,i) {return d.color;} )
     .attr("width", function(d,i) {return ancho(d.seguidores)} );
   
 svg.selectAll('text').data(datos).enter().append('text')
