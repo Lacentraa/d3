@@ -27,8 +27,8 @@ d3.select("body").selectAll("p")
 var ancho = d3.scaleLinear().domain([0,14607000]).range([0,200]);
 
 var svg = d3.select("body")
- .append("svg")
- .attr("width",200)
+  .append("svg")
+  .attr("width",200)
   .attr("height",200);
 
 var losR = svg.selectAll('rect').data(datos).enter().append('rect')
@@ -45,7 +45,8 @@ losR.transition()
 svg.selectAll('text').data(datos).enter().append('text')
    .attr("fill","white")
    .attr("font-size",40)
-   .attr("x",10)
+   .attr("text-anchor", "end")
+   .attr("x", function(d,i) {return ancho(d.seguidores)-10 })
    .attr("y", function(d,i) {return 50+(i*100)}  )
    .text( function(d,i) {return d.candidato   }  )
 
